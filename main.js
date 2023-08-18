@@ -34,3 +34,30 @@ window.addEventListener("keydown", (event) => {
         }
     }
 });
+
+content.addEventListener("dblclick", () => {
+    console.log("hello");
+    if (document.fullscreenElement) {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        }
+    } else {
+        document.documentElement.requestFullscreen();
+    }
+});
+
+let timeOut;
+const hideCursor = () => {
+    content.style.cursor = "none";
+};
+const showCursor = () => {
+    content.style.cursor = "default";
+};
+const resetTimer = () => {
+    clearTimeout(timeOut);
+    timeOut = setTimeout(hideCursor, 3000);
+    showCursor();
+};
+
+window.addEventListener("mousemove", resetTimer);
+resetTimer();
