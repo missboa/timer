@@ -59,5 +59,9 @@ const resetTimer = () => {
     showCursor();
 };
 
+window.addEventListener("contextmenu", (event) => {
+    event.preventDefault();
+});
+
 window.addEventListener("mousemove", resetTimer);
 resetTimer();
