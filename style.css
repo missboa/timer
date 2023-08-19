@@ -16,3 +16,9 @@
     color: #ddd;
     user-select: none;
 }
+
+@media (max-width: 555px) {
+    #container {
+        font-size: 11vmax;
+    }
+}
